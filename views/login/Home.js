@@ -81,12 +81,9 @@ export default function Home({navigation}){
         <ScrollView>
         <View style={[css.container,{height:"100%",backgroundColor:'#F2F2F2'}]}>
             <MenuHome navigation={navigation} iconeleft="sign-out" iconeright="plus" title="Lista de Produtos"/>
-
             {resultado.map(product => (
             <Product key={product.id} {...product} />
-               ))}  
-
-          
+               ))}            
          </View>
          </ScrollView> 
     )

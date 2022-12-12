@@ -8,7 +8,6 @@ import MenuVoltar from "../../assets/components/MenuVoltar";
 import config from "../../config/config.json"
 
 export default function Atualizar({ navigation, route }) {
-  const [resultado, setResultado] = useState(null);
   const [produto, setProduto] = useState("");
   const [armazenamento, setArmazenamento] = useState("");
   const [valor, setValor] = useState("");
@@ -25,18 +24,15 @@ export default function Atualizar({ navigation, route }) {
 }
   useEffect(() => {
     axios.get(url).then(response => {
-      setResultado(response.data);
       setProduto(response.data.nome);
       setArmazenamento(response.data.capacidade);
       setValor(response.data.preco);   
       
     });
   }, []);
-  console.log(resultado)
   
   function atualizarDados() {    
-    let novoValor = valor.toString().replace(',','.');  
-   
+    let novoValor = valor.toString().replace(',','.');     
     console.log(novoValor, armazenamento)
     axios
       .put(url, {
