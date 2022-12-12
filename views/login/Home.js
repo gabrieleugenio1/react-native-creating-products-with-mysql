@@ -25,7 +25,7 @@ const renderImage = () => {
     
     
     ];
-    const randomImageIndex = Math.floor(Math.random() * Math.floor(10));
+    const randomImageIndex = Math.floor(Math.random() * Math.floor(11));
     return Images[randomImageIndex].image;
 };    
 export default function Home({navigation}){   
